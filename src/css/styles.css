@@ -1,0 +1,151 @@
+/* Common styles */
+@import url('./reset.css');
+@import url('./base.css');
+@import url('./container.css');
+
+.header {
+  border-bottom: 1px solid black;
+}
+.btn {
+  font-family: inherit;
+  border-radius: 8px;
+  padding: 8px 16px;
+  min-width: 75px;
+  height: 40px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background-color: #4e75ff;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn:hover,
+.btn:focus {
+  background-color: #6c8cff;
+}
+
+form {
+  text-align: center;
+}
+
+input {
+  min-width: 272px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #808080;
+  border-radius: 4px;
+  outline: none;
+  background-color: transparent;
+  border: 1px solid #808080;
+  height: 40px;
+  margin-right: 8px;
+  padding-left: 16px;
+  transition: border-color var(--time) var(--cubic);
+}
+
+input:hover,
+input:focus {
+  border-color: #000;
+}
+input:focus-within {
+  border-color: #4e75ff;
+}
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+a img {
+  object-fit: cover;
+
+  transition: transform 300ms;
+}
+a img:hover {
+  transform: scale(1.1);
+}
+
+.gallery {
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 768px) {
+  .gallery {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+}
+
+.thumb {
+  margin-bottom: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  .thumb {
+    width: calc((100% - 24px) / 2);
+    margin-bottom: 0;
+  }
+}
+@media only screen and (min-width: 1280px) {
+  .thumb {
+    width: calc((100% - 48px) / 3);
+  }
+}
+
+.info {
+  padding: 0 10px;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 5px 5px;
+}
+
+@media only screen and (min-width: 768px) {
+  .info {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.info-item {
+  display: flex;
+  gap: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.loader {
+  border: 8px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 8px solid #4e75ff;
+  width: 48px;
+  height: 48px;
+  animation: spin 2s linear infinite;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
