@@ -63,15 +63,6 @@ a {
   color: inherit;
 }
 
-a img {
-  object-fit: cover;
-
-  transition: transform 300ms;
-}
-a img:hover {
-  transform: scale(1.1);
-}
-
 .gallery {
   margin-right: auto;
   margin-left: auto;
@@ -91,6 +82,11 @@ a img:hover {
   margin-bottom: 16px;
 }
 
+.thumb:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
 @media only screen and (min-width: 768px) {
   .thumb {
     width: calc((100% - 24px) / 2);
@@ -101,6 +97,11 @@ a img:hover {
   .thumb {
     width: calc((100% - 48px) / 3);
   }
+}
+.gallery-image {
+  object-fit: cover;
+  width: 100%;
+  height: 250px;
 }
 
 .info {
@@ -128,6 +129,7 @@ a img:hover {
     align-items: center;
   }
 }
+
 .loader {
   border: 8px solid #f3f3f3;
   border-radius: 50%;
@@ -148,4 +150,41 @@ a img:hover {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.scroll-to-top {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .scroll-to-top {
+    display: block;
+    position: fixed;
+    bottom: 210px;
+    right: 8%;
+
+    width: 45px;
+    height: 45px;
+    color: white;
+    background-color: black;
+    outline: 2px solid orange;
+    border-radius: 150px 150px 0px;
+    border: none;
+
+    cursor: pointer;
+
+    transition: opacity var(--time) var(--cubic), color var(--time) var(--cubic),
+      outline var(--time) var(--cubic);
+    animation: slide-top 1s linear 2s infinite alternate both;
+  }
+}
+
+.scroll-to-top:hover,
+.scroll-to-top:focus {
+  outline: 2px solid orange;
+}
+
+.js-transparent {
+  opacity: 0;
+  pointer-events: none;
 }

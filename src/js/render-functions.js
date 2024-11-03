@@ -1,4 +1,5 @@
-export { resetDomMarkup, domMarkup };
+export { resetDomMarkup, domMarkup, markupGallery, innerDomMarkup };
+
 const gallery = document.querySelector('.gallery');
 
 function markupGallery(fetchedData) {
@@ -44,6 +45,10 @@ function markupGallery(fetchedData) {
 
 function resetDomMarkup() {
   gallery.innerHTML = '';
+}
+
+function innerDomMarkup(markup) {
+  gallery.innerHTML = markup;
 }
 
 function domMarkup(resp) {
